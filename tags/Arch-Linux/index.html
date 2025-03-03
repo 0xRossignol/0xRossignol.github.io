@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: Arch Linux - MyBlog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="MyBlog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MyBlog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="MyBlog"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="MyBlog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="Rossignol"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"MyBlog","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"Rossignol"},"publisher":{"@type":"Organization","name":"MyBlog","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="MyBlog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/0xRossignol"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">标签</a></li><li class="is-active"><a href="#" aria-current="page">Arch Linux</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-02-24T08:24:55.000Z" title="2025/2/24 16:24:55">2025-02-24</time>发表</span><span class="level-item"><time dateTime="2025-02-25T09:29:17.389Z" title="2025/2/25 17:29:17">2025-02-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/OS/">OS</a><span> / </span><a class="link-muted" href="/categories/Linux/">Linux</a><span> / </span><a class="link-muted" href="/categories/Linux/Arch-Linux/">Arch Linux</a></span><span class="level-item">41 分钟读完 (大约6212个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/02/24/Arch%20Linux/arch-install/">Arch Install</a></p><div class="content"><h1 id="1-安装前的准备"><a href="#1-安装前的准备" class="headerlink" title="1. 安装前的准备"></a>1. 安装前的准备</h1><p>根据 <strong>Arch Wiki</strong> 和 <strong>ChatGPT</strong> 所给的内容安装 <strong>Arch Linux</strong></p>
+<h2 id="1-1-配置控制台键盘布局和字体"><a href="#1-1-配置控制台键盘布局和字体" class="headerlink" title="1.1 配置控制台键盘布局和字体"></a>1.1 配置控制台键盘布局和字体</h2><p>由于默认字体太小，本次安装使用适合 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/HiDPI#Linux_console_(tty)">HiDPI 屏幕</a>[^hdpi]的最大字体之一 —— <code>ter-132b</code> 进行安装</p>
+<p>[^hdpi]:HiDPI（High Dots Per Inch）显示器，指的是在较小尺寸下却拥有较高分辨率的显示器。Apple 将其称作“<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Retina_Display">视网膜屏幕</a>”，这项技术主要存在于高端笔记本电脑和显示器中。</p>
+<p>要修改控制台字体，只需运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">setfont ter-132b</span></span><br></pre></td></tr></table></figure>
+
+<p>命令即可。</p>
+<h2 id="1-2-切换UEFI模式安装"><a href="#1-2-切换UEFI模式安装" class="headerlink" title="1.2 切换UEFI模式安装"></a>1.2 切换UEFI模式安装</h2><p>VMware默认安装模式为 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/BIOS"><em>Legacy BIOS</em></a> ，与Arch Wiki不符，故改为 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B5%B1%E4%B8%80%E5%8F%AF%E5%BB%B6%E4%BC%B8%E9%9F%8C%E9%AB%94%E4%BB%8B%E9%9D%A2"><em>UEFI模式</em></a> 进行安装。</p>
+<p>只需在VMware设置中修改即可。</p>
+<p>以下内容由ChatGPT提供：</p>
+<h3 id="如何确认引导模式？"><a href="#如何确认引导模式？" class="headerlink" title="如何确认引导模式？"></a><strong>如何确认引导模式？</strong></h3><p>你可以使用以下方法确认系统是以 <strong>BIOS</strong> 还是 <strong>UEFI</strong> 启动的：</p>
+<h4 id="方法-1：检查-sys-firmware-efi"><a href="#方法-1：检查-sys-firmware-efi" class="headerlink" title="方法 1：检查 /sys/firmware/efi/"></a><strong>方法 1：检查 <code>/sys/firmware/efi/</code></strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /sys/firmware/efi</span><br></pre></td></tr></table></figure>
+
+<p>如果目录不存在，就说明是 <strong>Legacy BIOS 模式</strong>。</p>
+<h4 id="方法-2：使用-efivar-命令（仅适用于-UEFI）"><a href="#方法-2：使用-efivar-命令（仅适用于-UEFI）" class="headerlink" title="方法 2：使用 efivar 命令（仅适用于 UEFI）"></a><strong>方法 2：使用 <code>efivar</code> 命令（仅适用于 UEFI）</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">efivar -l</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>efivar</code> 命令不可用，或者返回 **”No such file or directory”**，说明系统是 <strong>Legacy BIOS 模式</strong>。</p>
+<h4 id="方法-3：使用-dmesg-命令"><a href="#方法-3：使用-dmesg-命令" class="headerlink" title="方法 3：使用 dmesg 命令"></a><strong>方法 3：使用 <code>dmesg</code> 命令</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmesg | grep -i efi</span><br></pre></td></tr></table></figure>
+
+<p>如果系统是 <strong>UEFI</strong>，会输出一些 EFI 相关的日志。如果没有任何输出，则是 <strong>Legacy BIOS</strong>。</p>
+<h2 id="1-3-验证引导模式"><a href="#1-3-验证引导模式" class="headerlink" title="1.3 验证引导模式"></a>1.3 验证引导模式</h2><p>要验证系统目前的引导模式，请检查 UEFI 位数：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">cat</span> /sys/firmware/efi/fw_platform_size</span></span><br></pre></td></tr></table></figure>
+
+<p>如果命令结果为 <code>64</code>，则系统是以 UEFI 模式引导且使用 64 位 x64 UEFI。如果命令结果为 <code>32</code>，则系统是以 UEFI 模式引导且使用 32 位 IA32 UEFI，虽然其受支持，但引导加载程序只能使用 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Systemd-boot">systemd-boot</a>和<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/GRUB">GRUB</a>。如果文件不存在，则系统可能是以<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/BIOS">BIOS</a>模式（或 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Compatibility_Support_Module">CSM</a> 模式）(这两种模式通常出现在<strong>老旧</strong>的电脑或<strong>未经配置的虚拟机</strong>上）引导。如果系统没有以您想要的模式（UEFI 或 BIOS）引导启动，请您参考自己的计算机或主板说明书。</p>
+<h2 id="1-4-连接到互联网"><a href="#1-4-连接到互联网" class="headerlink" title="1.4 连接到互联网"></a>1.4 连接到互联网</h2><p>要在 Live 环境中配置网络连接，请遵循以下步骤：</p>
+<ol>
+<li><p>确保系统已经列出并启用了</p>
+<p>网络接口，用 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/ip-link.8">ip-link(8) </a>检查：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ip <span class="built_in">link</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于无线局域网（Wi-Fi）和无线广域网（WWAN），请确保网卡未被 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Rfkill">rfkill</a> 禁用。</p>
+</li>
+<li><p>连接到网络：</p>
+<ul>
+<li>有线以太网——连接网线。</li>
+<li>WiFi——使用 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Iwd#iwctl">iwctl</a> 认证无线网络。</li>
+<li>移动宽带调制解调器（移动网卡） - 使用 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wzh/index.php?title=Mmcli&action=edit&redlink=1">mmcli</a> 连接到移动网络。</li>
+</ul>
+</li>
+<li><p>配置网络连接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#DHCP">DHCP</a>：对于有线以太网、无线局域网（WLAN）和无线广域网（WWAN）网络接口来说，动态 IP 地址和 DNS 服务器分配（由 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Systemd-networkd">systemd-networkd</a> 和 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Systemd-resolved">systemd-resolved</a> 提供功能）能够开箱即用。</li>
+<li>静态 IP 地址：按照<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#%E9%9D%99%E6%80%81_IP_%E5%9C%B0%E5%9D%80">网络配置#静态 IP 地址</a>进行操作。</li>
+</ul>
+</li>
+<li><p>用 <strong>ping</strong> 检查网络连接：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ping archlinux.org</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>由于是通过VMware安装，网络连接已经配置好了。</p>
+<h2 id="1-5-更新系统时间"><a href="#1-5-更新系统时间" class="headerlink" title="1.5 更新系统时间"></a>1.5 更新系统时间</h2><p>在 Live 环境中 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Systemd-timesyncd">systemd-timesyncd</a> 默认启用，也就是说当系统已经创建互联网连接后，系统时间将自动同步。</p>
+<p>使用 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/timedatectl.1">timedatectl(1)</a> 确保系统时间是同步的，建议提前执行 <code>timedatectl set-timezone *地区/城市*</code>（中国用户可以使用 <code>timedatectl set-timezone Asia/Shanghai</code> 以设置北京时间）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">timedatectl</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-6-创建硬盘分区"><a href="#1-6-创建硬盘分区" class="headerlink" title="1.6 创建硬盘分区"></a>1.6 创建硬盘分区</h2><p>在 Arch Linux 安装过程中，你需要先对硬盘进行分区。你可以使用 <code>fdisk</code> 或 <code>cfdisk</code> 等工具。</p>
+<h3 id="方法-1：使用-fdisk（推荐）"><a href="#方法-1：使用-fdisk（推荐）" class="headerlink" title="方法 1：使用 fdisk（推荐）"></a><strong>方法 1：使用 <code>fdisk</code>（推荐）</strong></h3><p><code>fdisk</code> 是命令行工具，适合对磁盘进行精确控制。</p>
+<h4 id="1-查看磁盘"><a href="#1-查看磁盘" class="headerlink" title="1. 查看磁盘"></a><strong>1. 查看磁盘</strong></h4><p>先列出所有磁盘：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<p>或者：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure>
+
+<p>找到你的目标磁盘，例如 <code>/dev/sda</code>（注意：<strong>不要选错磁盘</strong>）。</p>
+<h4 id="2-进入-fdisk"><a href="#2-进入-fdisk" class="headerlink" title="2. 进入 fdisk"></a><strong>2. 进入 <code>fdisk</code></strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/sda</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<ul>
+<li><code>/dev/sda</code> 是你的目标磁盘，可能需要改成 <code>/dev/nvme0n1</code> 或 <code>/dev/vda</code>，根据实际情况调整。</li>
+</ul>
+<h4 id="3-删除现有分区（如果需要）"><a href="#3-删除现有分区（如果需要）" class="headerlink" title="3. 删除现有分区（如果需要）"></a><strong>3. 删除现有分区（如果需要）</strong></h4><p>如果磁盘上已有分区，可以输入 <code>d</code> 并选择要删除的分区，重复此操作直到所有旧分区删除完毕。</p>
+<h4 id="4-创建新分区"><a href="#4-创建新分区" class="headerlink" title="4. 创建新分区"></a><strong>4. 创建新分区</strong></h4><p>按照 UEFI 或 BIOS 模式进行分区：</p>
+<h5 id="UEFI-模式（推荐）"><a href="#UEFI-模式（推荐）" class="headerlink" title="UEFI 模式（推荐）"></a><strong>UEFI 模式（推荐）</strong></h5><ol>
+<li><p>创建 </p>
+<p>EFI 分区</p>
+<p>（512MB，类型 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EFI System</span><br></pre></td></tr></table></figure>
+
+<p>）：</p>
+<ul>
+<li>输入 <code>n</code>（新建分区）</li>
+<li>选择 <code>1</code></li>
+<li><code>First sector</code>：默认回车</li>
+<li><code>Last sector</code>：输入 <code>+512M</code></li>
+<li>输入 <code>t</code>（修改类型），然后输入 <code>1</code>（EFI System）</li>
+</ul>
+</li>
+<li><p>创建 </p>
+<p>Swap 分区</p>
+<p>（可选，4GB+）：</p>
+<ul>
+<li>输入 <code>n</code>，选择 <code>2</code></li>
+<li><code>First sector</code>：默认回车</li>
+<li><code>Last sector</code>：输入 <code>+4G</code>（根据需要调整）</li>
+<li>输入 <code>t</code>，选择 <code>2</code>，然后输入 <code>19</code>（Linux swap）</li>
+</ul>
+</li>
+<li><p>创建 </p>
+<p>根分区（剩余空间）</p>
+<p>：</p>
+<ul>
+<li>输入 <code>n</code>，选择 <code>3</code></li>
+<li><code>First sector</code>：默认回车</li>
+<li><code>Last sector</code>：默认回车（使用剩余空间）</li>
+</ul>
+</li>
+</ol>
+<h5 id="Legacy-BIOS-模式"><a href="#Legacy-BIOS-模式" class="headerlink" title="Legacy BIOS 模式"></a><strong>Legacy BIOS 模式</strong></h5><ol>
+<li><p>创建 </p>
+<p>主分区（整个磁盘）</p>
+<p>：</p>
+<ul>
+<li>输入 <code>n</code>，选择 <code>1</code></li>
+<li><code>First sector</code>：默认回车</li>
+<li><code>Last sector</code>：默认回车（使用整个磁盘）</li>
+</ul>
+</li>
+<li><p>创建 </p>
+<p>Swap 分区（可选，4GB+）</p>
+<p>：</p>
+<ul>
+<li>输入 <code>n</code>，选择 <code>2</code></li>
+<li><code>First sector</code>：默认回车</li>
+<li><code>Last sector</code>：输入 <code>+4G</code></li>
+<li>输入 <code>t</code>，选择 <code>2</code>，然后输入 <code>82</code>（Linux swap）</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-写入分区表并退出"><a href="#5-写入分区表并退出" class="headerlink" title="5. 写入分区表并退出"></a><strong>5. 写入分区表并退出</strong></h4><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CopyEdit</span><br><span class="line">w</span><br></pre></td></tr></table></figure>
+
+<p>这样磁盘分区就完成了！</p>
+<hr>
+<h3 id="方法-2：使用-cfdisk（简单易用）"><a href="#方法-2：使用-cfdisk（简单易用）" class="headerlink" title="方法 2：使用 cfdisk（简单易用）"></a><strong>方法 2：使用 <code>cfdisk</code>（简单易用）</strong></h3><p>如果你更喜欢图形界面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sda</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>选择 </p>
+<p>分区表类型</p>
+<p>：</p>
+<ul>
+<li><strong>UEFI 模式</strong> 选择 <code>gpt</code></li>
+<li><strong>BIOS 模式</strong> 选择 <code>dos</code></li>
+</ul>
+</li>
+<li><p>选择 <code>New</code> 创建分区，按照上面的 UEFI 或 BIOS 分区方案进行操作。</p>
+</li>
+<li><p>选择 <code>Write</code> 并确认写入分区表。</p>
+</li>
+<li><p>选择 <code>Quit</code> 退出。</p>
+</li>
+</ol>
+<hr>
+<h3 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a><strong>格式化分区</strong></h3><p>分区完成后，需要格式化：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1      # EFI 分区（UEFI 模式）</span><br><span class="line">mkfs.ext4 /dev/sda2          # 根分区</span><br><span class="line">mkswap /dev/sda3             # Swap 分区</span><br><span class="line">swapon /dev/sda3             # 启用 Swap</span><br></pre></td></tr></table></figure>
+
+<p>如果是 BIOS 模式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda1</span><br><span class="line">mkswap /dev/sda2</span><br><span class="line">swapon /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<h3 id="分区方案示例"><a href="#分区方案示例" class="headerlink" title="分区方案示例"></a>分区方案示例</h3><table>
+<thead>
+<tr>
+<th align="center">已安装系统上的挂载点</th>
+<th align="center">分区</th>
+<th align="center"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs">分区类型</a></th>
+<th align="center">建议大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>/boot</code>1</td>
+<td align="center"><code>/dev/*efi_system_partition*</code></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/EFI_system_partition">EFI system partition</a></td>
+<td align="center">1 GiB。</td>
+</tr>
+<tr>
+<td align="center"><code>[SWAP]</code></td>
+<td align="center"><code>/dev/*swap_partition*</code></td>
+<td align="center">Linux <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Swap">swap</a> (交换空间)</td>
+<td align="center">至少 4GiB</td>
+</tr>
+<tr>
+<td align="center"><code>/</code></td>
+<td align="center"><code>/dev/*root_partition*</code></td>
+<td align="center">Linux x86-64 根目录 (&#x2F;)</td>
+<td align="center">设备剩余空间，至少23-32GiB</td>
+</tr>
+</tbody></table>
+<h2 id="1-7-格式化分区"><a href="#1-7-格式化分区" class="headerlink" title="1.7 格式化分区"></a>1.7 格式化分区</h2><h3 id="为什么要格式化分区？"><a href="#为什么要格式化分区？" class="headerlink" title="为什么要格式化分区？"></a><strong>为什么要格式化分区？</strong></h3><ol>
+<li><strong>创建文件系统</strong>：分区本身只是划分磁盘的区域，而格式化会在分区上创建具体的文件系统，使操作系统能存储和管理文件。</li>
+<li><strong>确保数据结构一致</strong>：不同的操作系统和用途需要不同的文件系统，比如 Linux 用 <code>ext4</code>，UEFI 需要 <code>FAT32</code>。</li>
+<li><strong>清除已有数据</strong>：格式化会清空原有数据，防止磁盘上的旧数据影响新系统。</li>
+</ol>
+<hr>
+<h3 id="各个命令的解释"><a href="#各个命令的解释" class="headerlink" title="各个命令的解释"></a><strong>各个命令的解释</strong></h3><p>在 Arch Linux 安装过程中，我们会用到以下格式化命令：</p>
+<h4 id="1-格式化-EFI-分区（仅适用于-UEFI-模式）"><a href="#1-格式化-EFI-分区（仅适用于-UEFI-模式）" class="headerlink" title="1. 格式化 EFI 分区（仅适用于 UEFI 模式）"></a><strong>1. 格式化 EFI 分区（仅适用于 UEFI 模式）</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>mkfs.fat</code>：创建 FAT 文件系统。</li>
+<li><code>-F32</code>：指定使用 <strong>FAT32</strong> 格式，这是 UEFI 规范要求的格式。</li>
+<li><code>/dev/sda1</code>：要格式化的分区（UEFI 下 <code>/dev/sda1</code> 通常是 EFI 分区）。</li>
+</ul>
+<p><strong>为什么要用 FAT32？</strong><br>UEFI 固件只能识别 <strong>FAT 文件系统</strong>，因此 EFI 分区必须使用 FAT32，否则引导失败。</p>
+<hr>
+<h4 id="2-格式化-Linux-根分区"><a href="#2-格式化-Linux-根分区" class="headerlink" title="2. 格式化 Linux 根分区"></a><strong>2. 格式化 Linux 根分区</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>mkfs.ext4</code>：创建 <strong>ext4</strong> 文件系统（Linux 常用的文件系统）。</li>
+<li><code>/dev/sda2</code>：要格式化的分区（这里假设 <code>/dev/sda2</code> 是根分区）。</li>
+</ul>
+<p><strong>为什么要用 ext4？</strong></p>
+<ul>
+<li><code>ext4</code> 是 Linux 默认的文件系统，稳定可靠，支持大文件和日志功能。</li>
+<li>你也可以选择 <code>btrfs</code>、<code>xfs</code> 或 <code>f2fs</code>，但 <code>ext4</code> 兼容性最好。</li>
+</ul>
+<hr>
+<h4 id="3-格式化并启用-Swap-分区"><a href="#3-格式化并启用-Swap-分区" class="headerlink" title="3. 格式化并启用 Swap 分区"></a><strong>3. 格式化并启用 Swap 分区</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkswap /dev/sda3</span><br><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释：</strong></p>
+<ul>
+<li><code>mkswap /dev/sda3</code>：将 <code>/dev/sda3</code> 分区格式化为 Swap 分区（交换空间）。</li>
+<li><code>swapon /dev/sda3</code>：启用 Swap 分区，使其生效。</li>
+</ul>
+<p><strong>为什么需要 Swap？</strong><br>Swap 主要用于：</p>
+<ul>
+<li><strong>内存不足时使用</strong>（比如你的物理内存 4GB，但程序需要 6GB，系统会用 Swap 临时存储数据）。</li>
+<li><strong>休眠（hibernate）支持</strong>（如果你的 Swap 够大，Linux 可以将内存数据写入 Swap 并休眠）。</li>
+<li><strong>防止 OOM（Out of Memory）</strong>（Swap 让系统在内存不足时还能继续运行，而不是直接崩溃）。</li>
+</ul>
+<p><strong>Swap 该分多大？</strong></p>
+<ul>
+<li><strong>无特殊需求</strong>：分配和物理内存一样大（4GB 内存 → 4GB Swap）。</li>
+<li><strong>想用休眠（Hibernate）</strong>：Swap 至少等于 <strong>物理内存大小</strong>。</li>
+<li><strong>服务器或高内存机器</strong>：可以少分甚至不分 Swap。</li>
+</ul>
+<h2 id="1-8-挂载分区"><a href="#1-8-挂载分区" class="headerlink" title="1.8 挂载分区"></a>1.8 挂载分区</h2><h3 id="挂载-UEFI-分区方案"><a href="#挂载-UEFI-分区方案" class="headerlink" title="挂载 UEFI 分区方案"></a><strong>挂载 UEFI 分区方案</strong></h3><p>假设你的分区结构如下：</p>
+<ul>
+<li><code>/dev/sda1</code> → <strong>EFI 分区</strong>（FAT32，512MB）</li>
+<li><code>/dev/sda2</code> → <strong>根分区</strong>（ext4）</li>
+<li><code>/dev/sda3</code> → <strong>Swap 分区</strong>（可选）</li>
+</ul>
+<h4 id="1-挂载根分区（-）"><a href="#1-挂载根分区（-）" class="headerlink" title="1. 挂载根分区（/）"></a><strong>1. 挂载根分区（<code>/</code>）</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这会把 <code>/dev/sda2</code>（根分区）挂载到 <code>/mnt</code>，后续的 Arch Linux 安装都将在 <code>/mnt</code> 目录下进行。</li>
+</ul>
+<h4 id="2-创建-boot-efi-目录并挂载-EFI-分区"><a href="#2-创建-boot-efi-目录并挂载-EFI-分区" class="headerlink" title="2. 创建 /boot/efi 目录并挂载 EFI 分区"></a><strong>2. 创建 <code>/boot/efi</code> 目录并挂载 EFI 分区</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/boot/efi</span><br><span class="line">mount /dev/sda1 /mnt/boot/efi</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>mkdir -p /mnt/boot/efi</code>：创建 EFI 挂载点。</li>
+<li><code>mount /dev/sda1 /mnt/boot/efi</code>：挂载 EFI 分区到 <code>/mnt/boot/efi</code>，使系统能正确安装引导程序（如 <code>systemd-boot</code> 或 <code>grub</code>）。</li>
+</ul>
+<h4 id="3-启用-Swap-分区（如果有）"><a href="#3-启用-Swap-分区（如果有）" class="headerlink" title="3. 启用 Swap 分区（如果有）"></a><strong>3. 启用 Swap 分区（如果有）</strong></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这会让 Swap 分区生效，提高内存不足时的稳定性。</li>
+</ul>
+<hr>
+<h3 id="检查挂载情况"><a href="#检查挂载情况" class="headerlink" title="检查挂载情况"></a><strong>检查挂载情况</strong></h3><p>可以用以下命令确认分区是否正确挂载：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<p>你应该能看到类似的输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sda      8:0    0    20G  0 disk  </span><br><span class="line">├─sda1   8:1    0   512M  0 part /mnt/boot/efi</span><br><span class="line">├─sda2   8:2    0    19G  0 part /mnt</span><br><span class="line">└─sda3   8:3    0     1G  0 part [SWAP]</span><br></pre></td></tr></table></figure>
+
+<p>这样，你的 UEFI 分区方案就正确挂载完成了！</p>
+<h1 id="2-开始安装系统"><a href="#2-开始安装系统" class="headerlink" title="2. 开始安装系统"></a>2. 开始安装系统</h1><h2 id="2-1-选择镜像站"><a href="#2-1-选择镜像站" class="headerlink" title="2.1 选择镜像站"></a>2.1 选择镜像站</h2><p>系统的文件 <code>/etc/pacman.d/mirrorlist</code> 中定义了软件包会从哪个<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E9%95%9C%E5%83%8F">镜像</a>站下载。在 LiveCD 启动的系统上，且在连接到互联网后，<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Reflector">reflector</a> 会通过选择 20 个最新同步的 HTTPS 镜像站并按下载速率对其进行排序来更新镜像列表（<strong>由于只考虑最新的 20 个镜像站，其结果常不佳</strong>）。</p>
+<p>在列表中，越靠前的镜像站在下载软件包时，就会有越高的优先级。<strong>请您检查 <code>/etc/pacman.d/mirrorlist</code> 文件</strong>，看看列出的镜像站的顺序是否合适。如果不合适，可以手动<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BC%96%E8%BE%91">编辑</a>文件，将离您所处地理位置最近的镜像移到文件的头部，同时也应该考虑一些其他的评判标准。</p>
+<p>如果 <code>/etc/pacman.d/mirrorlist</code> 文件中没有合适的镜像站，可以手动从 <a target="_blank" rel="noopener" href="https://archlinux.org/mirrorlist/">archlinux 官方网站的镜像站列表</a>下载一份。这需要您所在的网络能够正常访问 archlinux 官方网站。例如，使用 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/curl.1">curl(1)</a> 下载位于中国大陆的 HTTPS 镜像站：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># curl -L &#x27;https://archlinux.org/mirrorlist/?country=CN&amp;protocol=https&#x27; -o /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>或者，也可以通过安装 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=pacman-mirrorlist">pacman-mirrorlist</a>包 来获取按国家分列的原始镜像列表。这么做的缺点是，pacman 仍然会使用当前配置中的镜像站来下载软件包数据库和 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=pacman-mirrorlist">pacman-mirrorlist</a>包，这可能会很慢。在挑选了能用的镜像之后，可以执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pacman -Sy pacman-mirrorlist</span><br></pre></td></tr></table></figure>
+
+<p>再将 <code>/etc/pacman.d/mirrorlist.pacnew</code> 复制到 <code>/etc/pacman.d/mirrorlist</code> 并进行编辑。</p>
+<p>或者，如果您记得想要使用的镜像站的 URL，那么可以手动编辑 <code>/etc/pacman.d/mirrorlist</code> 文件并手动输入 URL。</p>
+<p>这个文件接下来还会被 <em>pacstrap</em> 拷贝到新系统里，所以请您确保设置正确。</p>
+<h2 id="2-2-更新密钥环"><a href="#2-2-更新密钥环" class="headerlink" title="2.2 更新密钥环"></a>2.2 更新密钥环</h2><p>过时的Live 系统内置密钥环会导致在 <em>pacstrap</em> 的时候无法正常安装软件包（提示为文件签名损坏）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pacman -Syu archlinux-keyring</span><br></pre></td></tr></table></figure>
+
+<p>使用上面的命令更新当前 Live 系统的密钥环，也可以防止因为意外导致开发者私钥被盗用造成的安全问题。</p>
+<p>如果您在 Live 系统里启用了<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Arch_Linux_%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA%E4%BB%93%E5%BA%93">中文社区仓库</a>或其他<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E9%9D%9E%E5%AE%98%E6%96%B9%E7%94%A8%E6%88%B7%E4%BB%93%E5%BA%93">非官方用户仓库</a>，也不要忘了一同更新其密钥环。</p>
+<p>参见 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Pacman/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AD%BE%E5%90%8D">pacman&#x2F;软件包签名</a>。</p>
+<h2 id="2-3-安装必需的软件包"><a href="#2-3-安装必需的软件包" class="headerlink" title="2.3 安装必需的软件包"></a>2.3 安装必需的软件包</h2><p>使用 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/pacstrap.8">pacstrap(8)</a> 脚本，安装 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=base">base</a>包 软件包和 Linux <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%86%85%E6%A0%B8">内核</a>以及常规硬件的固件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pacstrap -K /mnt base linux linux-firmware</span><br></pre></td></tr></table></figure>
+
+<p>这时候可以同时额外安装计算机的 CPU 微码包。如果计算机是 Intel 的 CPU ，使用 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a>包，AMD CPU 则使用 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=amd-ucode">amd-ucode</a>包。也可以暂时都不安装，等到进入系统后再安装。</p>
+<p><a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=base">base</a>包 软件包并没有包含 Live 环境中的全部程序。因此要获得一个功能齐全的基本系统，可能需要安装更多软件包。要安装其他软件包或软件包组（比如 <a target="_blank" rel="noopener" href="https://archlinux.org/groups/x86_64/base-devel/">base-devel</a>包组），请将它们的名字追加到下面的 <em>pacstrap</em> 命令后（以空格分隔），或者也可以在 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97#Chroot">Chroot 进入新系统</a>后使用 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Pacman">pacman</a> 手动<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85">安装</a>。特别要考虑安装：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Pacman/%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AD%BE%E5%90%8D">GPG 密钥环</a>（如 <a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/repo/tree/master/archlinuxcn/archlinuxcn-keyring">archlinuxcn-keyring</a>CNRepo，若启用了某些<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E9%9D%9E%E5%AE%98%E6%96%B9%E7%94%A8%E6%88%B7%E4%BB%93%E5%BA%93">非官方用户仓库</a>。）</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%88%97%E8%A1%A8/%E6%96%87%E6%A1%A3#%E6%8E%A7%E5%88%B6%E5%8F%B0">控制台文本编辑器</a>（如 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Nano">nano</a>、<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Vim">vim</a> 和 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=emacs">emacs</a>包）以便从控制台<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BC%96%E8%BE%91">编辑</a>配置文件（如<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%82%B9%E6%96%87%E4%BB%B6">点文件</a>）。</li>
+<li>访问和管理 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/RAID#%E5%AE%89%E8%A3%85">RAID</a> 或 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/LVM#%E5%87%86%E5%A4%87">LVM</a> 分区的工具。</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE">联网</a>所需要的程序（例如<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%99%A8">网络管理器或 DHCP 客户端</a>，Wi-Fi <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#%E8%AE%A4%E8%AF%81">认证软件</a>和移动宽带连接所需的 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wzh/index.php?title=ModemManager&action=edit&redlink=1">ModemManager</a>，以及部分 USB 无线网卡需要的 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=usb_modeswitch">usb_modeswitch</a>包）。</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统的用户工具</a>（比如 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/XFS">XFS</a> 和 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Btrfs">Btrfs</a> 文件系统对应的管理工具），可用于创建和管理<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统</a>以及 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Fsck">fsck</a>。</li>
+<li>CPU <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%BE%AE%E7%A0%81">微码</a>更新 —— <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=amd-ucode">amd-ucode</a>包 或 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=intel-ucode">intel-ucode</a>包 —— 用于硬件错误和安全修复。</li>
+<li>未包含在 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=linux-firmware">linux-firmware</a>包 中的额外必需固件（如用于<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/ALSA#%E5%9B%BA%E4%BB%B6">内建音频</a>的 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=sof-firmware">sof-firmware</a>包、用于 Marvell 无线的 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=linux-firmware-marvell">linux-firmware-marvell</a>包 以及<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%8D%9A%E9%80%9A%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1">博通无线网卡</a>的固件包)。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://geo.mirror.pkgbuild.com/iso/latest/arch/pkglist.x86_64.txt">文件 pkglist.x86_64.txt</a> 中包含 Live 系统安装的软件包列表。</p>
+<h1 id="3-配置系统"><a href="#3-配置系统" class="headerlink" title="3. 配置系统"></a>3. 配置系统</h1><h2 id="3-1-生成-fstab-文件"><a href="#3-1-生成-fstab-文件" class="headerlink" title="3.1 生成 fstab 文件"></a>3.1 生成 fstab 文件</h2><p>通过以下命令生成 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Fstab">fstab</a> 文件 (用 <code>-U</code> 或 <code>-L</code> 选项设置 UUID 或卷标)：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># genfstab -U /mnt &gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p><strong>强烈建议</strong>在执行完以上命令后，检查一下生成的 <code>/mnt/etc/fstab</code> 文件是否正确。如果有问题，最好在现在手动修改。对于熟练者，可以自行编辑 <code>/mnt/etc/fstab</code> 文件。</p>
+<p>可以手动修改 <code>/mnt/etc/fstab</code> 添加挂载选项（参见 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS">mount(8) § FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS</a> 和 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/ext4.5#MOUNT_OPTIONS">ext4(5) § MOUNT_OPTIONS</a>）。例如，给<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98">固态硬盘</a>的 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Ext4">ext4</a> 文件系统添加 <code>discard</code> 选项以启用 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/TRIM">TRIM</a>。</p>
+<h2 id="3-2-chroot-到新安装的系统"><a href="#3-2-chroot-到新安装的系统" class="headerlink" title="3.2 chroot 到新安装的系统"></a>3.2 chroot 到新安装的系统</h2><p>通过以下命令 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Change_root">chroot</a> 到新安装的系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong>此处使用的是<code>arch-chroot</code>而不是直接使用<code>chroot</code>，注意不要输错了。</p>
+<h2 id="3-3-设置时区"><a href="#3-3-设置时区" class="headerlink" title="3.3 设置时区"></a>3.3 设置时区</h2><p>通过以下命令设置<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E6%97%B6%E5%8C%BA">时区</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ln -sf /usr/share/zoneinfo/Region（地区名）/City（城市名） /etc/localtime</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong>例如，在中国大陆需要将时区设置为北京时间，那么请运行 <code># ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code>。时区名称是上海而非北京，是因为上海是该时区内人口最多的城市（<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Time_in_China#IANA_time_zone_database">参考来源</a>）。</p>
+<p>然后运行 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/hwclock.8">hwclock(8)</a> 以生成 <code>/etc/adjtime</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># hwclock --systohc</span><br></pre></td></tr></table></figure>
+
+<p>这个命令假定已设置硬件时间为 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/UTC">UTC 时间</a>。详细信息请查看<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E6%97%B6%E9%97%B4%E6%A0%87%E5%87%86">系统时间#时间标准</a>。</p>
+<p>为了防止时钟漂移并确保时间准确，请使用 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%97%B6%E9%97%B4%E5%8D%8F%E8%AE%AE">NTP</a>（网络时间协议，Network Time Protocol）客户端（例如 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Systemd-timesyncd">systemd-timesyncd</a>）设置<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4#%E6%97%B6%E9%92%9F%E5%90%8C%E6%AD%A5">时间同步</a>。</p>
+<h2 id="3-4-区域和本地化设置"><a href="#3-4-区域和本地化设置" class="headerlink" title="3.4 区域和本地化设置"></a>3.4 区域和本地化设置</h2><p>程序和库如果需要本地化文本，都依赖<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale">区域设置</a>，后者明确规定了地域、货币、时区日期的格式、字符排列方式和其他本地化标准。</p>
+<p>需要设置这两个文件：<code>locale.gen</code> 与 <code>locale.conf</code>。</p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BC%96%E8%BE%91">编辑</a> <code>/etc/locale.gen</code>，然后取消掉 <code>en_US.UTF-8 UTF-8</code> 和其他需要的 UTF-8 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale">区域设置</a>前的注释（**#**）。</p>
+<p>接着执行 <code>locale-gen</code> 以生成 locale 信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># locale-gen</span><br></pre></td></tr></table></figure>
+
+<p>然后创建 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/locale.conf.5">locale.conf(5)</a> 文件，并<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale#%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">编辑设定 LANG 变量</a>，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/locale.conf</span><br><span class="line">LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>另外对于中文用户：</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>用户可以设置自己的 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale">locale</a>，详情请参阅 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale#%E5%9C%A8%E7%94%A8%E6%88%B7%E4%BC%9A%E8%AF%9D%E4%B8%AD%E8%A6%86%E7%9B%96%E7%B3%BB%E7%BB%9F%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">在用户会话中覆盖系统区域设置</a> 或 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Locale#%E8%AE%BE%E7%BD%AE%E5%BD%93%E5%89%8D%E5%8C%BA%E5%9F%9F">设置当前区域</a>；</li>
+<li>将系统 locale 设置为<code>en_US.UTF-8</code>，系统的日志就会用英文显示，这样更容易判断和处理问题；<ul>
+<li>也可以设置为 <code>en_GB.UTF-8</code> ［英语（英国）］或 <code>en_SG.UTF-8</code> ［英语（新加坡）］，附带以下特点：<ul>
+<li>进入桌面环境后以 24 小时制显示时间；</li>
+<li><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/LibreOffice">LibreOffice</a> 等办公软件的纸张尺寸会默认为 <code>A4</code> 而非 <code>Letter(US)</code>；</li>
+<li>可尽量避免不必要且可能造成处理麻烦的英制单位。</li>
+</ul>
+</li>
+<li>设置的 LANG 变量需与 locale 设置一致，否则会出现以下错误：</li>
+</ul>
+</li>
+</ul>
+<p><strong>警告：</strong>并不推荐在此设置任何中文 locale，这可能会导致 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Getty">tty</a> 上中文显示为方块（因为 TTY 下没有 CJK 字体）。如果您不经常使用 tty ，或是稍后需要安装<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83">桌面环境</a>，则在不使用 tty 后可以设置为中文的 locale 。为了使 TTY 显示中文，也可以使用打了补丁的<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%86%85%E6%A0%B8">内核</a>，如 <a target="_blank" rel="noopener" href="https://github.com/archlinuxcn/repo/tree/master/archlinuxcn/linux-lily">linux-lily</a>CNRepo。</p>
+<p>如果需要修改<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97#%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%94%AE%E7%9B%98%E5%B8%83%E5%B1%80%E5%92%8C%E5%AD%97%E4%BD%93">#控制台键盘布局和字体</a>，可编辑 <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/vconsole.conf.5">vconsole.conf(5)</a> 使其长期生效，以德语键盘（qwertz）为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/vconsole.conf</span><br><span class="line">KEYMAP=de-latin1</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>如果键盘为标准美式键盘（中国最常见的键盘布局），请勿照抄如上设置。</p>
+<h2 id="3-5-网络配置"><a href="#3-5-网络配置" class="headerlink" title="3.5 网络配置"></a>3.5 网络配置</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%88%9B%E5%BB%BA">创建</a> <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#%E8%AE%BE%E7%BD%AE%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%8D">hostname</a> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/hostname</span><br><span class="line">主机名</span><br></pre></td></tr></table></figure>
+
+<p>请接着完成新安装的环境的<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE">网络配置</a>，配置过程中可能需要安装合适的<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86">网络管理</a>软件。</p>
+<p><strong>警告：</strong>请按上述网络配置指引正确配置好网络后再重新启动，否则系统重新启动后可能无法连接网络（不过可以用 LiveCD 重新进入 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Chroot#%E4%BD%BF%E7%94%A8_arch-chroot">arch-chroot</a> 进行配置）。例如在虚拟机软件 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/VirtualBox">VirtualBox</a> <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/VirtualBox/%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%AE%89%E8%A3%85_Arch_Linux">安装</a>并使用桥接模式时就需要配置 DHCP 。</p>
+<h2 id="3-6-关于-initramfs"><a href="#3-6-关于-initramfs" class="headerlink" title="3.6 关于 initramfs"></a>3.6 关于 initramfs</h2><p>通常不需要自己创建新的 <em>initramfs</em>，因为在执行 <em>pacstrap</em> 时已经安装 <a target="_blank" rel="noopener" href="https://archlinux.org/packages/?name=linux">linux</a>包，这时已经运行过 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Mkinitcpio">mkinitcpio</a> 了。</p>
+<p>如果是 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wzh/index.php?title=%E5%9C%A8_LVM_%E4%B8%8A%E5%AE%89%E8%A3%85_Arch_Linux&action=edit&redlink=1">LVM</a>、<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Dm-crypt">系统加密</a>或 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/RAID#%E9%85%8D%E7%BD%AE_mkinitcpio">RAID</a> 等分区配置，请修改 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Mkinitcpio">mkinitcpio.conf</a> 并用以下命令重新创建一个 Initramfs：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkinitcpio -P</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-7-设置-root-密码"><a href="#3-7-设置-root-密码" class="headerlink" title="3.7 设置 root 密码"></a>3.7 设置 root 密码</h2><p>使用以下命令设置 root <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8">密码</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># passwd</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong>建议为 <a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/Root">root</a> 用户选择一个<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E5%85%A8#%E9%80%89%E6%8B%A9%E5%AE%89%E5%85%A8%E7%9A%84%E5%AF%86%E7%A0%81">强密码</a>并<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E5%85%A8#%E7%BB%B4%E6%8A%A4%E5%AF%86%E7%A0%81%E5%AE%89%E5%85%A8">保护其安全</a>。</p>
+<h2 id="3-8-安装引导程序"><a href="#3-8-安装引导程序" class="headerlink" title="3.8 安装引导程序"></a>3.8 安装引导程序</h2><p>需要安装 Linux 引导加载程序，才能在安装后启动系统，可以使用的的引导程序已在<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F">引导加载程序</a>中列出，请选择一个安装并配置它，<a target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/GRUB">GRUB</a> 是一个比较常见且通用的选择。</p>
+<p><strong>警告：</strong>这是安装的最后一步也是关键的一步，请点击上述链接并按指引正确安装好引导加载程序后再重新启动。否则计算机重新启动后将无法正常进入 Arch Linux 系统。</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.jpg" alt="Rossignol"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Rossignol</p><p class="is-size-6 is-block">NaN</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Mars</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">16</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/0xRossignol" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/0xRossignol"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Golang/"><span class="level-start"><span class="level-item">Golang</span></span><span class="level-end"><span class="level-item tag">3</span></span></a><ul><li><a class="level is-mobile" href="/categories/Golang/basics/"><span class="level-start"><span class="level-item">basics</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/Java/"><span class="level-start"><span class="level-item">Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/basics/"><span class="level-start"><span class="level-item">basics</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="/categories/Java/basics/Thinking-in-Java/"><span class="level-start"><span class="level-item">Thinking in Java</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Linux/Arch-Linux/"><span class="level-start"><span class="level-item">Arch Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/Software-Construction/"><span class="level-start"><span class="level-item">Software Construction</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="/categories/Software-Construction/MIT6-031/"><span class="level-start"><span class="level-item">MIT6.031</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/TypeScript/"><span class="level-start"><span class="level-item">TypeScript</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/test/"><span class="level-start"><span class="level-item">test</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/toy-projects/"><span class="level-start"><span class="level-item">toy projects</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-24T08:24:55.000Z">2025-02-24</time></p><p class="title"><a href="/2025/02/24/Arch%20Linux/arch-install/">Arch Install</a></p><p class="categories"><a href="/categories/OS/">OS</a> / <a href="/categories/Linux/">Linux</a> / <a href="/categories/Linux/Arch-Linux/">Arch Linux</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-17T02:02:45.000Z">2025-02-17</time></p><p class="title"><a href="/2025/02/17/Write%20yourself%20a%20Git!/Write%20yourself%20a%20Git!/">Write yourself a Git!</a></p><p class="categories"><a href="/categories/toy-projects/">toy projects</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-13T05:54:56.000Z">2025-02-13</time></p><p class="title"><a href="/2025/02/13/Thinking-in-Java/Thinking-in-Java-pt-5/">Thinking in Java pt.5</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/basics/">basics</a> / <a href="/categories/Java/basics/Thinking-in-Java/">Thinking in Java</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-12T05:54:56.000Z">2025-02-12</time></p><p class="title"><a href="/2025/02/12/Thinking-in-Java/Thinking-in-Java-pt-4/">Thinking in Java pt.4</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/basics/">basics</a> / <a href="/categories/Java/basics/Thinking-in-Java/">Thinking in Java</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-11T05:54:56.000Z">2025-02-11</time></p><p class="title"><a href="/2025/02/11/Thinking-in-Java/Thinking-in-Java-pt-3/">Thinking in Java pt.3</a></p><p class="categories"><a href="/categories/Java/">Java</a> / <a href="/categories/Java/basics/">basics</a> / <a href="/categories/Java/basics/Thinking-in-Java/">Thinking in Java</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/02/"><span class="level-start"><span class="level-item">二月 2025</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/01/"><span class="level-start"><span class="level-item">一月 2025</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/12/"><span class="level-start"><span class="level-item">十二月 2024</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Arch-Linux/"><span class="tag">Arch Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/English/"><span class="tag">English</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Golang/"><span class="tag">Golang</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OS/"><span class="tag">OS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Software-Construction/"><span class="tag">Software Construction</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TypeScript/"><span class="tag">TypeScript</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/toy-projects/"><span class="tag">toy projects</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%AD%E6%96%87/"><span class="tag">中文</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B1%87%E7%BC%96/"><span class="tag">汇编</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BF%BB%E8%AF%91/"><span class="tag">翻译</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="MyBlog" height="28"></a><p class="is-size-7"><span>&copy; 2025 Rossignol</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
